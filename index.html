@@ -10,7 +10,6 @@
       }
       .dot::after {
         content: "";
-        /* animation: dots 4s steps(4.end) 0s infinite ; */
         animation: dots 1.5s steps(4, end) infinite;
       }
 
@@ -83,7 +82,6 @@
       const textSpan = document.createElement("span");
       div.appendChild(textSpan);
 
-      // Step 1: Type one char at a time
       for (const char of string) {
         textSpan.innerHTML +=
           glitch && Math.random() < 0.05
@@ -94,7 +92,7 @@
         await new Promise((resolve) => setTimeout(resolve, 40));
       }
 
-      // Step 2: Add blinking dots AFTER typing is done
+      // Add blinking dots after typing is done
       const dotsSpan = document.createElement("span");
       dotsSpan.classList.add("dot");
       div.appendChild(dotsSpan);
